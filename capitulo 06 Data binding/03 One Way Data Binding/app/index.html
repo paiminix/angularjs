@@ -1,0 +1,32 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+    <title>No Data binding</title>
+    <!—Importamos la css -->
+    <link rel="stylesheet" type="text/css" href="assets/app.css">
+</head>
+
+<body ng-controller="UsuariosController as usuario">
+    One time binding:
+    <ul>
+        <li ng-repeat="item in ::usuario.names">{{item}}</li>
+    </ul>
+
+    Normal binding
+    <ul>
+        <li ng-repeat="item in usuario.names track by $index">{{item}}</li>
+    </ul>
+
+    Agregar nombre: 
+    <input type="text" ng-model="nombre">
+    <button ng-click="usuario.addName(nombre)">Agregar</button><br>
+    One time binding: {{::nombre}}  <br>
+    Normal binding: {{nombre}}  
+
+    <script src="libs/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/usuarios.controller.js"></script>
+</body>
+
+</html>

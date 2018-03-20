@@ -1,0 +1,24 @@
+<!doctype html>
+<html >
+<head>
+    <title>{{name}}</title>
+    <!—Importamos la css -->
+    <link rel="stylesheet" type="text/css" href="assets/app.css">
+</head>
+
+<body ng-app="myApp" ng-controller="UsuariosController as usuario">
+	Nombre: <input type="text" ng-model="name">
+	Mi nombre es: {{name}}
+
+	<h1> Como calcula la interpolación la representación de una cadena  </h1>
+	<ul>
+		<li>1. {{usuario.getResult()}}</li>
+		<li>2. {{usuario.getDate()}}</li>
+		<li>3. {{usuario.myObj}}</li>
+	</ul>
+    <script src="libs/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/usuarios.controller.js"></script>
+</body>
+
+</html>

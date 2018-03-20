@@ -1,0 +1,27 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+    <title>Filters</title>
+    <!—Importamos la css -->
+    <link rel="stylesheet" type="text/css" href="assets/app.css">
+</head>
+
+<body ng-controller="UsuariosController as usuario">
+	<!-- Uso basico del filtro json -->
+    <pre>{{ {"name":"Pablo","username":"USER001","password":"123456","rol":"Administrador","fechaAlta":"13/12/2025"}  | json }}</pre>
+
+    <!-- Uso basico del filtro json con parametro spacing-->
+    <pre>{{ {"name":"Pablo","username":"USER001","password":"123456","rol":"Administrador","fechaAlta":"13/12/2025"}  | json:4 }}</pre>
+
+    <pre>{{usuario.myJson}}</pre>
+ 
+
+ 
+
+    <script src="libs/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/usuarios.controller.js"></script>
+</body>
+
+</html>

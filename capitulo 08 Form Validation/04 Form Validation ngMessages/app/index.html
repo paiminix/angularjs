@@ -1,0 +1,61 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+    <title>Filters</title>
+    <!—Importamos la css -->
+    <link rel="stylesheet" type="text/css" href="assets/app.css">
+</head>
+
+<body ng-controller="UsuariosController">
+    <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
+        <input type="text" 
+            name="usernameField" 
+            placeholder="Username" 
+            ng-model="user.username" 
+            ng-required="true" 
+            ng-minlength="8" 
+            ng-maxlength="15" 
+            ng-pattern="/^[a-zA-Z]*$/">
+        <br>
+
+        <!-- Primer ejemplo sin atributo multiple
+        <div ng-messages="userForm.usernameField.$error">
+            <div ng-message="required">El username es requerido.</div>
+            <div ng-message="minlength">El username debe tener 8 caracteres.</div>
+            <div ng-message="maxlength">El username debe tener un máximo 15 caracteres.</div>
+            <div ng-message="pattern">El username debe tener solo letras.</div>
+        </div>
+        -->
+
+        <!-- Con atributo multiple 
+        <div ng-messages="userForm.usernameField.$error" multiple>
+            <div ng-message="required">El username es requerido.</div>
+            <div ng-message="minlength">El username debe tener 8 caracteres.</div>
+            <div ng-message="maxlength">El username debe tener un máximo 15 caracteres.</div>
+            <div ng-message="pattern">El username debe tener solo letras.</div>
+        </div>    
+        -->  
+
+        <!-- $touched  -->
+        <div ng-messages="userForm.usernameField.$error" multiple ng-if="userForm.usernameField.$touched">
+            <div ng-message="required">El username es requerido.</div>
+            <div ng-message="minlength">El username debe tener 8 caracteres.</div>
+            <div ng-message="maxlength">El username debe tener un máximo 15 caracteres.</div>
+            <div ng-message="pattern">El username debe tener solo letras.</div>
+        </div>    
+          
+
+
+
+        <br>
+        <input type="submit" ng-disabled="userForm.$invalid">
+    </form>
+
+    <script src="libs/angular.js"></script>
+    <script src="libs/angular-messages.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/usuarios.controller.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+function UsuariosController(){var a=this;a.titulo=""}app.controller("UsuariosController",UsuariosController);

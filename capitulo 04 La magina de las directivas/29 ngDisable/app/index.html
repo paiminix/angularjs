@@ -1,0 +1,20 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+    <title>Directiva ngDisable</title>
+    <!—Importamos la css -->
+    <link rel="stylesheet" type="text/css" href="assets/app.css">
+</head>
+
+<body ng-controller="UsuariosController as usuario">
+    Clic para deshabilitar:
+    <input type="checkbox" ng-model="checked">
+    <br/>
+    <button ng-click="usuario.clic()" ng-disabled="checked">Button</button>
+    <script src="libs/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/usuarios.controller.js"></script>
+</body>
+
+</html>

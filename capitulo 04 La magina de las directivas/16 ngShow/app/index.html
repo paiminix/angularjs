@@ -1,0 +1,22 @@
+<!doctype html>
+<html ng-app="myApp" ng-strict-di>
+
+<head>
+    <title>Directiva ngShow</title>
+</head>
+
+<body ng-controller="UsuariosController as usuario">
+    <div ng-show="usuario.edad > 50">
+        <p>El usuario cuenta con beneficios...</p>
+    </div>
+    <div ng-show="usuario.edad < 50">
+        <p>El usuario no cuenta con beneficios...</p>
+    </div>
+    <input type="button" ng-click="usuario.edad = 40" value="Clic">
+    
+    <script src="libs/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/usuarios.controller.js"></script>
+</body>
+
+</html>

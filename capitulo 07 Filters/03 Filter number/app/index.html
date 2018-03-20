@@ -1,0 +1,33 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+    <title>Filters</title>
+    <!—Importamos la css -->
+    <link rel="stylesheet" type="text/css" href="assets/app.css">
+</head>
+
+<body ng-controller="UsuariosController as usuario">
+	<!-- Uso basico del filtro number -->
+    {{ '20' + '25' | number }}
+    <br>
+    {{ 2025 | number }}  
+    <br>
+    <!-- Parte fraccionaria -->
+    {{ 2025.999 | number:2 }} 
+    <br>
+    <!-- Infinity -->
+    {{  usuario.testNumber1 | number }}  
+    <br>
+    <!-- -Infinity -->
+    {{ usuario.testNumber2 | number }}  
+    <br>
+    <!-- -NaN -->
+    {{ NaN | number }}  
+
+    <script src="libs/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/usuarios.controller.js"></script>
+</body>
+
+</html>

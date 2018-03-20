@@ -1,0 +1,22 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+    <title>Filters</title>
+    <!—Importamos la css -->
+    <link rel="stylesheet" type="text/css" href="assets/app.css">
+</head>
+
+<body ng-controller="UsuariosController as usuario">
+    <!-- Creacion de filtros personalizados -->
+    {{'TITULO' | capitalize }}
+
+    {{'TITULO' | capitalize:true }}
+    
+    <script src="libs/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/filters/usuarios.filters.js"></script>
+    <script src="js/controllers/usuarios.controller.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+    <title>Filters</title>
+    <!—Importamos la css -->
+    <link rel="stylesheet" type="text/css" href="assets/app.css">
+</head>
+
+<body ng-controller="UsuariosController as usuario">
+	<!-- Uso basico del filtro lowercase -->
+    <h1>{{'angularjs' | uppercase}}</h1>
+
+    <h1>{{usuario.textWithFilterUppercase | uppercase}}</h1>
+    
+    <script src="libs/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/usuarios.controller.js"></script>
+</body>
+
+</html>

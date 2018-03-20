@@ -1,0 +1,32 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+    <title>Directiva ngController - Controladores en Paralelo</title>
+</head>
+<body >
+     
+   <div ng-controller="Usuario1Controller">
+        El nombre de usuario es: {{nombreUsr1}}
+     
+   </div> 
+   <div ng-controller="Usuario2Controller">
+           El nombre de usuario es: {{nombreUsr2}}
+   </div>
+
+   <script src="libs/angular.js"></script>
+   <script>
+    	var app = angular.module('myApp', []);
+    	app.controller('Usuario1Controller', ['$scope', Usuario1Controller]); 
+
+    	function Usuario1Controller($scope) {
+        $scope.nombreUsr1 = "usuario 1";
+    	}
+
+      app.controller('Usuario2Controller', ['$scope', Usuario2Controller]); 
+
+      function Usuario2Controller($scope) {
+        $scope.nombreUsr2 = "usuario 2";
+      }
+  </script>
+</body>
+</html>

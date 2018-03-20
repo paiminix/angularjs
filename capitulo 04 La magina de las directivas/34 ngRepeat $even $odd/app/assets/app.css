@@ -1,0 +1,9 @@
+/*impar*/
+.odd {
+    color: green;
+}
+/*par*/
+.even {
+    color: red;
+}
+

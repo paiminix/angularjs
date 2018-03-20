@@ -1,0 +1,20 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+    <title>Directiva ngBindTemplate</title>
+    <!—Importamos la css -->
+    <link rel="stylesheet" type="text/css" href="assets/app.css">
+</head>
+
+<body ng-controller="UsuariosController">
+	<!-- Aunque title no esta definida en el controlador se crea el modelo title -->
+	Nombre del modulo: <input type="text" ng-model="title">
+    <p ng-bind-template="{{myHTML}} {{title}}"></p>
+
+    <script src="libs/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/usuarios.controller.js"></script>
+</body>
+
+</html>

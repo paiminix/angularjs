@@ -1,0 +1,106 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+    <title>Filters</title>
+    <!—Importamos la css -->
+    <link rel="stylesheet" type="text/css" href="assets/app.css">
+</head>
+
+<body ng-controller="UsuariosController as usuario">
+    <!-- Uso basico del filtro orderBy ordenamiento por defecto -->
+    <table>
+        <tr>
+            <th>Username</th>
+        </tr>
+        <tr ng-repeat="user in usuario.usersByUsername | orderBy">
+            <td>{{user}}</td>
+        </tr>
+    </table>
+    <hr>
+    <!-- ordenamiento mediante la propiedad de un objeto -->
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>Rol</th>
+            <th>Telefono</th>
+            <th>Edad</th>
+        </tr>
+        <tr ng-repeat="user in usuario.users | orderBy:'username'">
+            <td>{{user.username}}</td>
+            <td>{{user.rol}}</td>
+            <td>{{user.tel}}</td>
+            <td>{{user.edad}}</td>
+        </tr>
+    </table>
+    <hr>
+    <!-- ordenamiento usando reverse en true -->
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>Rol</th>
+            <th>Telefono</th>
+            <th>Edad</th>
+        </tr>
+        <tr ng-repeat="user in usuario.users | orderBy:'username':true">
+            <td>{{user.username}}</td>
+            <td>{{user.rol}}</td>
+            <td>{{user.tel}}</td>
+            <td>{{user.edad}}</td>
+        </tr>
+    </table>
+    <hr>
+    <!-- ordenamiento usando signo menos -->
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>Rol</th>
+            <th>Telefono</th>
+            <th>Edad</th>
+        </tr>
+        <tr ng-repeat="user in usuario.users | orderBy:'-username'">
+            <td>{{user.username}}</td>
+            <td>{{user.rol}}</td>
+            <td>{{user.tel}}</td>
+            <td>{{user.edad}}</td>
+        </tr>
+    </table>
+    <hr>
+    <!-- ordenamiento usando signo menos -->
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>Rol</th>
+            <th>Telefono</th>
+            <th>Edad</th>
+        </tr>
+        <tr ng-repeat="user in usuario.users | orderBy:'-username'">
+            <td>{{user.username}}</td>
+            <td>{{user.rol}}</td>
+            <td>{{user.tel}}</td>
+            <td>{{user.edad}}</td>
+        </tr>
+    </table>
+    <hr>
+    <!-- ordenamiento usando una funcion de comparacion -->
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>Rol</th>
+            <th>Telefono</th>
+            <th>Edad</th>
+        </tr>
+        <tr ng-repeat="user in usuario.users | orderBy:'username':false:usuario.myComparator">
+            <td>{{user.username}}</td>
+            <td>{{user.rol}}</td>
+            <td>{{user.tel}}</td>
+            <td>{{user.edad}}</td>
+        </tr>
+    </table>
+    <hr>
+    <script src="libs/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/usuarios.controller.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+    <title>Directiva ngRepeat</title>
+    <!—Importamos la css -->
+    <link rel="stylesheet" type="text/css" href="assets/app.css">
+</head>
+
+<body ng-controller="UsuariosController as usuario">
+    
+    <select ng-model="itemSeleccionado">
+        <option value="">Seleccione</option>
+        <option ng-repeat="(key, value) in usuario.myObj" value="{{key}}">
+                {{value}}
+        </option>
+     </select>
+     <br/>
+     <p>Mi elemento seleccionado: {{itemSeleccionado}}</p>
+     
+
+    <script src="libs/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/usuarios.controller.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+    <title>Usando ngOptions</title>
+    <!—Importamos la css -->
+    <link rel="stylesheet" type="text/css" href="assets/app.css">
+</head>
+
+<body ng-controller="UsuariosController as usuario" ng-init="a=10; b=20;">
+    <p>Operadores unarios</p>
+    <ul>
+        <li>{{!true}}</li>
+        <li>{{+a}}</li>
+        <li>{{-a}}</li>
+    </ul>
+    <p>Operadores adición y sustracción</p>
+    <ul>
+        <li>Adicion: {{a + b}}</li>
+        <li>Sustraccion: {{10 - 9}}</li>
+    </ul>
+    <p>Operadores de multiplicación</p>
+    <ul>
+        <li>Multiplicación {{10 * 9}}</li>
+        <li>División {{3 / 3}}</li>
+        <li>Módulo (el restante de la división) {{3 % 3}}</li>
+    </ul>
+    <p>Operadores de comparación</p>
+    <ul>
+        <li>{{a<10}}</li>
+        <li>{{a<=1}}</li>
+        <li>{{b>=a}}</li>
+        <li>{{b<=a}}</li>
+    </ul>
+    <p>Operadores de lógicos</p>
+    <ul>
+        <li>{{false && true}}</li>
+        <li>{{(a>b) || (b>a)}}</li>
+    </ul>
+    <p>Operadores ternario</p>
+    <ul>
+        <li>{{(a>b? a:b)}}</li>
+    </ul>
+    <p>Asignación de variables y más</p>
+    <ul>
+        <li>{{a= 3 / 3}}</li>
+        <li>{{'soy una cadena de texto'}}</li>
+        <li>{{usuario.name}}</li>
+        <li>{{usuario.items[0]}}</li>
+    </ul>
+    <script src="libs/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/usuarios.controller.js"></script>
+</body>
+
+</html>

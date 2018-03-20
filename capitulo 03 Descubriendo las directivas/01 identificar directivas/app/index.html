@@ -1,0 +1,22 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+    <title>Hola, Angular!</title>
+</head>
+<body>
+
+    Mi nombre es: <input type="text" ng-model="nombre"><br/>
+    <span ng-bind="nombre"></span> <br/>
+    <span ng_bind="nombre"></span> <br/>
+    <span ng:bind="nombre"></span> <br/>
+    <span x-ng:bind="nombre"></span> <br/>
+    <span x-ng-bind="nombre"></span> <br/>
+    <span data-ng-bind="nombre"></span> <br/>
+    <span data_ng-bind="nombre"></span> <br/>
+
+    <script src="libs/angular.js"></script>
+    <script>
+    	var app = angular.module('myApp', []);
+    </script>
+</body>
+</html>

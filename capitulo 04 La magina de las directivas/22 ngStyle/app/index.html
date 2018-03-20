@@ -1,0 +1,22 @@
+<!doctype html>
+<html ng-app="myApp" ng-strict-di>
+
+<head>
+    <title>Directiva ngStyle</title>
+    <!—Importamos la css -->
+    <link rel="stylesheet" type="text/css" href="assets/app.css">
+</head>
+
+<body>
+    <h1 ng-style="myStyle">Test de ngStyle</h1>
+    <input type="button" value="color" ng-click="myStyle={color:'red'}">
+    <input type="button" value="fuente" ng-click="myStyle={'font-size':'52px'}">
+    <input type="button" value="reiniciar" ng-click="myStyle={}">
+    <br/>
+    <pre>El valor de mi objeto es: myStyle={{myStyle}}</pre>
+    <script src="libs/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/usuarios.controller.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+    <title>Directiva ngRepeat</title>
+    <!—Importamos la css -->
+    <link rel="stylesheet" type="text/css" href="assets/app.css">
+</head>
+
+<body ng-controller="UsuariosController as usuario">
+    <!-- ng-init-->
+    <table>
+        <tr>
+            <th>#No.</th>
+            <th>Usuario</th>
+            <th>Rol</th>
+            <th>Propiedad</th>
+        </tr>
+        <tbody>
+            <tr ng-repeat="myUser in usuario.miColeccionUsuarios" ng-init="indice = $index + 1">
+                <td>{{indice}}</td>
+                <td>{{myUser.username}}</td>
+                <td>{{myUser.roles}}</td>
+                <td ng-show="$first">First</td>
+                <td ng-show="$middle">Middle</td>
+                <td ng-show="$last">Last</td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="libs/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/usuarios.controller.js"></script>
+</body>
+
+</html>

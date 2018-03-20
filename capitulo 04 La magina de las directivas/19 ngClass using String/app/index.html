@@ -1,0 +1,20 @@
+<!doctype html>
+<html ng-app="myApp" ng-strict-di>
+
+<head>
+    <title>Directiva ngClass</title>
+    <!—Importamos la css -->
+    <link rel="stylesheet" type="text/css" href="assets/app.css">
+</head>
+
+<body>
+    <h1>Usando la sintaxis String</h1>
+    <input type="input" ng-model="style" placeholder="Escribe: bold strike green">
+    <br/>
+    <p ng-class="style"> Probando la directiva ngClass con el valor String </p>
+    <script src="libs/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/usuarios.controller.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+/*impar*/
+.odd {
+    color: green;
+}
+/*par*/
+.even {
+    color: red;
+}
+
+/**
+ * Estilo CSS para form validation
+ * cuando los campos de entrada sean 
+ * invalidos y hayan sido toados.
+ */
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+} 
+
+/**
+ * Estilo CSS para form validation
+ * cuando los campos de entrada sean 
+ * validos y hayan sido toados.
+ */
+input.ng-valid.ng-touched {
+    border: 1px solid green;
+} 
+
+.error {
+   color: red;
+}
+
+
+

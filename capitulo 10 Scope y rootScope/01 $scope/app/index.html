@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Filters</title>
+    <!—Importamos la css -->
+    <link rel="stylesheet" type="text/css" href="assets/app.css">
+</head>
+
+<body ng-app="myApp">
+
+    <p>El valor de roootScope es:</p>
+    <h1>{{title}}</h1>
+
+    <div ng-controller="UsuariosController">
+        <p>El valor de title en el controlador es:</p>
+        <h1>{{title}}</h1>
+    </div>
+
+    <p>El valor de roootScope se mantiene:</p>
+	<h1>{{title}}</h1>
+
+    <script src="libs/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/usuarios.controller.js"></script>
+</body>
+
+</html>

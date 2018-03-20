@@ -1,0 +1,26 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+    <title>Usando ngOptions</title>
+    <!—Importamos la css -->
+    <link rel="stylesheet" type="text/css" href="assets/app.css">
+</head>
+
+<body ng-controller="UsuariosController as usuario">
+    <!-- select as label for value in array   -->
+    <select ng-model="usuario.seleccion" ng-options="framework.id as framework.lenguaje for framework in usuario.frameworks">
+    </select>
+    <p>Mi valor seleccionado: {{usuario.seleccion}}</p>
+    <br/><br/><br/><br/>
+    <!-- label for value in array  -->
+    <select ng-model="usuario.seleccionLabel" ng-options="framework.lenguaje for framework in usuario.frameworks">
+    </select>
+    <p>Mi valor seleccionado: {{usuario.seleccionLabel}}</p>
+     <p>Mi valor seleccionado: {{usuario.seleccionLabel.id}}</p>
+    <script src="libs/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/usuarios.controller.js"></script>
+</body>
+
+</html>

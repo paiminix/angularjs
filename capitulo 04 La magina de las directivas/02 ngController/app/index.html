@@ -1,0 +1,18 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+    <title>Directiva ngController</title>
+</head>
+<body ng-controller="UsuarioController">
+     
+   El nombre de usuario es: {{nombre}}
+ 
+   <script src="libs/angular.js"></script>
+   <script>
+    	var app = angular.module('myApp', []);
+    	app.controller('UsuarioController', ['$scope', function($scope){
+    		$scope.nombre = "Lya";
+    	}]); 
+   </script>
+</body>
+</html>

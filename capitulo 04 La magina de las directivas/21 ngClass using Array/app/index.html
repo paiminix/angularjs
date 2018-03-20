@@ -1,0 +1,29 @@
+<!doctype html>
+<html ng-app="myApp" ng-strict-di>
+
+<head>
+    <title>Directiva ngClass</title>
+    <!—Importamos la css -->
+    <link rel="stylesheet" type="text/css" href="assets/app.css">
+</head>
+
+<body>
+    <h1>Usando la sintaxis object</h1>
+    <input type="text" ng-model="style1" placeholder="Escribe: bold, strike or green"> 
+    <br>
+    <input type="text" ng-model="style2" placeholder="Escribe: bold, strike or green">
+    <br>
+    <input type="text" ng-model="style3" placeholder="Escribe: bold, strike or green"> 
+    <br/>
+    <p ng-class="[style1, style2, style3]"> Probando la directiva ngClass mediante Array </p>
+    <br/><br/><br/>
+    <input type="text" ng-model="style4" placeholder="Escribe: bold, strike or green"> 
+    <br>
+    <input type="checkbox" ng-model="error" placeholder="Escribe: bold, strike or green"> Error
+    <p ng-class="[style4, {strike: error}]"> Probando la directiva ngClass mediante Array y sintaxis map </p>
+    <script src="libs/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/usuarios.controller.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+    <title>Directiva ngController con sintaxis Controller As</title>
+</head>
+<body ng-controller="UsuarioController as usuario">
+     
+   El nombre de usuario es: {{usuario.nombre}}
+ 
+   <script src="libs/angular.js"></script>
+   <script>
+    	var app = angular.module('myApp', []);
+    	app.controller('UsuarioController', UsuarioController); 
+
+    	function UsuarioController() {
+    		this.nombre = "Lya";
+    	}
+  </script>
+</body>
+</html>

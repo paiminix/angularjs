@@ -1,0 +1,17 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+    <title>Directiva ngModel</title>
+</head>
+<body ng-controller="UsuariosController as usuarios">
+   <!--binding -->
+   Introduce el t&iacute;tulo: <input type="text" ng-model="usuarios.titulo">
+   
+   {{usuarios.titulo}}
+
+   <script src="libs/angular.js"></script>
+   <script src="js/app.js"></script>
+   <script src="js/controllers/usuarios.controllers.js"></script>
+</body>
+</html>
+

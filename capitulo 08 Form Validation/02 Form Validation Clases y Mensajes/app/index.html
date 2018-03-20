@@ -1,0 +1,62 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+    <title>Filters</title>
+    <!—Importamos la css -->
+    <link rel="stylesheet" type="text/css" href="assets/app.css">
+</head>
+
+<body ng-controller="UsuariosController">
+    <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
+        <input type="text" 
+            name="firstnameField" 
+            placeholder="Firstname" 
+            ng-model="user.firstname" 
+            ng-required="true" 
+            ng-pattern="/^[a-zA-Z]*$/">
+        <br>
+        <p class="error" ng-show="userForm.firstnameField.$invalid && userForm.firstnameField.$touched"> El primer nombre es requerido y debe contener solo letras</p>
+        <input type="text" 
+            name="lastnameField" 
+            placeholder="Lastname" 
+            ng-model="user.lastname" 
+            ng-required="true" 
+            ng-pattern="/^[a-zA-Z]*$/">
+        <br>
+        <p class="error" ng-show="userForm.lastnameField.$invalid && userForm.lastnameField.$touched"> El apellido es requerido y debe contener solo letras</p>    
+        <input type="email" 
+            name="emailField" 
+            placeholder="Email" 
+            ng-model="user.email" 
+            ng-required="true">
+        <br>
+        <p class="error" ng-show="userForm.emailField.$invalid && userForm.emailField.$touched"> El email es requerido</p>
+        <input type="text" 
+            name="usernameField" 
+            placeholder="Username" 
+            ng-model="user.username" 
+            ng-required="true" 
+            ng-minlength="8" 
+            ng-maxlength="15" 
+            ng-pattern="/^[a-zA-Z]*$/">
+        <br>
+        <p class="error" ng-show="userForm.usernameField.$invalid && userForm.usernameField.$touched"> El username es requerido y debe contener solo letras, tener un minimo de 8 caracteres y un maximo de 15</p>
+        <input type="text" 
+            name="passwordField" 
+            placeholder="Password" 
+            ng-model="user.password" 
+            ng-required="true" 
+            ng-minlength="8" 
+            ng-maxlength="55">
+        <br>
+        <p class="error" ng-show="userForm.passwordField.$invalid && userForm.passwordField.$touched"> El password es requerido y debe tener un minimo de 8 caracteres y un maximo de 55</p>    
+        <input type="submit" ng-disabled="userForm.$invalid">
+    </form>
+
+    <script src="libs/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/usuarios.controller.js"></script>
+</body>
+
+</html>

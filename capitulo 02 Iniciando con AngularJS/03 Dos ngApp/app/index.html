@@ -1,0 +1,28 @@
+<!doctype html>
+<html >
+<head>
+    <title>Hola, Angular!</title>
+</head>
+<body>
+    <div id="app1" ng-app="myApp" ng-controller="MiController">
+        {{nameApp}}
+    </div>
+    <div id="app2" ng-app="myOtherApp" ng-controller="MiOtherController">
+        {{nameApp}}
+    </div>
+
+    <script src="libs/angular.js"></script>
+    <script>
+    	var app = angular.module('myApp', []);
+	    app.controller('MiController', ['$scope', function($scope){
+            $scope.nameApp = "hola, My App";
+        }])
+
+        var app2 = angular.module('myOtherApp', []);
+        app2.controller('MiOtherController', ['$scope', function($scope){
+            $scope.nameApp = "hola, My Other App";
+        }]) 
+        angular.bootstrap(document.getElementById("app2"), ['myOtherApp']);
+    </script>
+</body>
+</html>

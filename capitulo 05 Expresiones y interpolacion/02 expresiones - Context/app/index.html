@@ -1,0 +1,21 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+    <title>Usando ngOptions</title>
+    <!—Importamos la css -->
+    <link rel="stylesheet" type="text/css" href="assets/app.css">
+</head>
+
+<body ng-controller="UsuariosController as usuario">
+    Nombre: <input ng-model="usuario.name" type="text"/>
+   
+    <button ng-click="usuario.saludo()">saludo</button> 
+    <!-- no puedo acceder directamente al objeto window -->
+    <button ng-click="window.alert('Nada ocurre :( ')">Window</button> 
+    <script src="libs/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/usuarios.controller.js"></script>
+</body>
+
+</html>

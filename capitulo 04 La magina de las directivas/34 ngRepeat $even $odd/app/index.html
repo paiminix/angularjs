@@ -1,0 +1,31 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+    <title>Usando ngRepeat</title>
+    <!—Importamos la css -->
+    <link rel="stylesheet" type="text/css" href="assets/app.css">
+</head>
+
+<body ng-controller="UsuariosController as usuario">
+    <!-- ng-init-->
+    <table>
+        <tr>
+            <th>#No.</th>
+            <th>Usuario</th>
+            <th>Rol</th>
+        </tr>
+        <tbody>
+            <tr ng-class="$even? 'even': 'odd'" ng-repeat="myUser in usuario.miColeccionUsuarios">
+                <td>{{$index}}</td>
+                <td>{{myUser.username}}</td>
+                <td>{{myUser.roles}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="libs/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/usuarios.controller.js"></script>
+</body>
+
+</html>

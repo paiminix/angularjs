@@ -1,0 +1,31 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+    <title>Directiva ngController - Controladores Anidados</title>
+</head>
+<body >
+     
+   <div ng-controller="UsuarioPadreController">
+        El nombre de usuario es: {{nombre}}
+      <div ng-controller="UsuarioHijoController">
+           El nombre de usuario es: {{nombre}}
+      </div>
+   </div>
+ 
+   <script src="libs/angular.js"></script>
+   <script>
+    	var app = angular.module('myApp', []);
+    	app.controller('UsuarioPadreController', ['$scope', UsuarioPadreController]); 
+
+    	function UsuarioPadreController($scope) {
+        $scope.nombre = "Lya Padre";
+    	}
+
+      app.controller('UsuarioHijoController', ['$scope', UsuarioHijoController]); 
+
+      function UsuarioHijoController($scope) {
+        $scope.nombre = "Lya Hijo";
+      }
+  </script>
+</body>
+</html>

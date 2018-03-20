@@ -1,0 +1,19 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+    <title>Hola, Angular!</title>
+</head>
+<body>
+
+    <div ng-init= "usuario.nombre = 'Lya' " >
+        El nombre del usuario es: {{usuario.nombre}}
+    <div/>
+    
+    {{usuario.nombre}}
+
+    <script src="libs/angular.js"></script>
+    <script>
+    	var app = angular.module('myApp', []);
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+    <title>Filters</title>
+    <!—Importamos la css -->
+    <link rel="stylesheet" type="text/css" href="assets/app.css">
+</head>
+
+<body ng-controller="UsuariosController">
+    <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
+        <input type="text" 
+            name="usernameField" 
+            placeholder="Username" 
+            ng-model="user.username" 
+            ng-required="true" 
+            ng-minlength="8" 
+            ng-maxlength="15" 
+            ng-pattern="/^[a-zA-Z]*$/">
+        <br>
+
+        <p class="error" ng-show="userForm.usernameField.$error.required"> El username es requerido</p>
+        <p class="error" ng-show="userForm.usernameField.$error.minlength"> El username debe tener 8 caracteres</p>
+        <p class="error" ng-show="userForm.usernameField.$error.maxlength"> El username debe tener un máximo 15 caracteres</p>
+        <p class="error" ng-show="userForm.usernameField.$error.pattern"> El username debe tener solo letras</p>
+
+        <input type="email" 
+            name="emailField" 
+            placeholder="Email" 
+            ng-model="user.email"
+            ng-required="true">
+        <br>
+        <p class="error" ng-show="userForm.emailField.$error.required"> El email es requerido</p>
+        <p class="error" ng-show="userForm.emailField.$error.email"> Debe ser un correo electronico valido</p>
+        <br>
+        <input type="submit" ng-disabled="userForm.$invalid">
+    </form>
+
+    <script src="libs/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/usuarios.controller.js"></script>
+</body>
+
+</html>

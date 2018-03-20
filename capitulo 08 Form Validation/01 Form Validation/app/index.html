@@ -1,0 +1,83 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+    <title>Filters</title>
+    <!—Importamos la css -->
+    <link rel="stylesheet" type="text/css" href="assets/app.css">
+</head>
+
+<body ng-controller="UsuariosController">
+    <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
+        <label>Username</label>
+        <!--
+        <input type="text" name="usernameField" ng-model="user.username" ng-required="true">
+        -->
+        <input 
+        	type="text" 
+        	name="usernameField"
+            placeholder="Username" 
+        	ng-model="user.username" 
+        	ng-required="true"
+        	ng-minlength="8"
+        	ng-maxlength="15"
+            ng-pattern = "/^[a-zA-Z]*$/">
+        <input type="submit" ng-disabled="userForm.$invalid">    
+    </form>
+
+    <div>
+    	<h2>Formulario</h2>
+        <table border="1">
+            <tbody>
+                <tr>
+                    <td>Valid: {{userForm.$valid}}</td>
+                </tr>
+                <tr>
+                    <td>Invalid: {{userForm.$invalid}}</td>
+                </tr>
+                <tr>
+                    <td>Pristine: {{userForm.$pristine}}</td>
+                </tr>
+                <tr>
+                    <td>Dirty: {{userForm.$dirty}}</td>
+                </tr>
+                <tr>
+                    <td>Submitted: {{userForm.$submitted}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+    	<h2>Username</h2>
+        <table border="1">
+            <tbody>
+                <tr>
+                    <td>Valid: {{userForm.usernameField.$valid}}</td>
+                </tr>
+                <tr>
+                    <td>Invalid: {{userForm.usernameField.$invalid}}</td>
+                </tr>
+                <tr>
+                    <td>Pristine: {{userForm.usernameField.$pristine}}</td>
+                </tr>
+                <tr>
+                    <td>Dirty: {{userForm.usernameField.$dirty}}</td>
+                </tr>
+                <tr>
+                    <td>Untouched: {{userForm.usernameField.$untouched}}</td>
+                </tr>
+                <tr>
+                    <td>Touched: {{userForm.usernameField.$touched}}</td>
+                </tr>                
+
+            </tbody>
+        </table>
+    </div>
+    </div>
+    <script src="libs/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/usuarios.controller.js"></script>
+</body>
+
+</html>

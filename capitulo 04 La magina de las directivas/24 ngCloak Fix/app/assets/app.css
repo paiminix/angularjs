@@ -1,0 +1,19 @@
+.bold {
+    font-weight: bold;
+}
+.green {
+    color: green;
+}
+.has-error {
+    color: red;
+    background-color: yellow;
+}
+.red {
+    color: red;
+}
+.strike {
+    text-decoration: line-through;
+}
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}

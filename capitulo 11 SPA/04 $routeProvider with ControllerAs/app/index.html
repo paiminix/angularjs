@@ -1,0 +1,28 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+    <title>Route</title>
+    <!—Importamos la css -->
+    <link rel="stylesheet" type="text/css" href="assets/app.css">
+</head>
+
+<body>
+
+    <!-- Menu -->
+    <a href="#!">Home</a>
+    <a href="#!users">Usuarios</a>
+    <a href="#!about">Acerca</a>
+
+    <div ng-view></div>
+
+    <script src="libs/angular.js"></script>
+    <script src="libs/angular-route.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/appRoute.js"></script>
+    <script src="js/controllers/about.controller.js"></script>
+    <script src="js/controllers/home.controller.js"></script>
+    <script src="js/controllers/usuarios.controller.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!doctype html>
+<html ng-app="myApp" ng-strict-di>
+
+<head>
+    <title>Directiva ngHide</title>
+</head>
+
+<body ng-controller="UsuariosController as usuario">
+    Click me: <input type="checkbox" ng-model="usuario.checked"><br/>
+    El valor de checked es: {{usuario.checked}}<br/>
+    
+    <div ng-hide="usuario.checked">
+        <p>Me visualizo mientras el checkbox no este comprobado (unchecked)...</p>
+    </div>
+    <div ng-hide="!usuario.checked">
+        <p>Me visualizo mientras el checkbox este comprobado (checked)...</p>
+    </div>
+        
+    <script src="libs/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/usuarios.controller.js"></script>
+</body>
+
+</html>

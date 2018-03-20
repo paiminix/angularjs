@@ -1,0 +1,25 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+    <title>No Data binding</title>
+    <!—Importamos la css -->
+    <link rel="stylesheet" type="text/css" href="assets/app.css">
+</head>
+
+<body ng-controller="UsuariosController as usuario">
+    Nombre:
+    <input type="text" ng-model="nombre"> {{nombre}}
+
+    <div ng-init="count = 0">
+    </div>
+    Inicia en: <input type="text" ng-model="count">
+    <button ng-click="count = count + 1"> Click</button>
+    <p> <span ng-bind="count"> </span></p>
+
+    <script src="libs/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/usuarios.controller.js"></script>
+</body>
+
+</html>
